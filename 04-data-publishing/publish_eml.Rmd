@@ -1,0 +1,19 @@
+---
+title: "publish EML"
+author: "Karthik Ram"
+date: "2/15/2015"
+output: html_document
+---
+
+
+## Publish to Figshare
+
+```{r}
+library(dataone)
+eml_publish("hawk_occurence.xml", 
+            description="Example EML file from EML",
+            categories = "Ecology", 
+            tags = "EML", 
+            destination="figshare")
+```
+

@@ -1,0 +1,38 @@
+## rgbif use case - Finding countries species are found in using rgbif
+
+### Load some libraries
+
+```{r}
+library(rgbif)
+library(plyr)
+```
+
+### List of bird species
+
+```{r}
+spplist <- c('Geothlypis trichas','Tiaris olivacea','Pterodroma axillaris','Calidris ferruginea','Pterodroma macroptera','Gallirallus australis','Falco cenchroides','Telespiza cantans','Oreomystis bairdi','Cistothorus palustris')
+```
+
+### Get GBIF keys for each taxon
+
+```{r}
+keys <- sapply(spplist, function(x) name_backbone(x, rank="species")$usageKey)
+```
+
+### Get data for each species
+
+```{r}
+out <- count_facet(keys = keys, countries = 50)
+out <- out[ out$V1 != 0 , ] # remove zeros
+```
+
+Match names to codes
+
+```{r match}
+namescodes <- ldply(keys)
+names(namescodes) <- c('name','code')
+alldata <- merge(namescodes, out, by.x="code", by.y=".id")
+head(alldata)
+```
+
+

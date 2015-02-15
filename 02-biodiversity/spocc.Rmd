@@ -1,0 +1,41 @@
+### spocc - Make some maps!
+
+### Load libraries
+
+```{r load, message=FALSE, warning=FALSE}
+library('spocc')
+```
+
+### spocc unifies access to biodiversity data across sources
+
+```{r sources, message=FALSE, warning=FALSE}
+out <- occ(query='Accipiter striatus', from='gbif')
+out$gbif # GBIF data w/ metadata
+out$ebird$data # empty
+out$gbif$meta #  metadata, your query parameters, time the call executed, etc. 
+out$gbif$data # just data
+```
+
+And you can squash together data from sources easily
+
+```{r manysources, message=FALSE, warning=FALSE}
+out <- occ(query='Accipiter striatus', from=c('gbif','ebird'))
+head( occ2df(out) )
+```
+
+### Make a map using ggplot2
+
+```{r ggplot2}
+ebird_data <- occ(query = 'Accipiter striatus', from = 'ebird')
+mapggplot(ebird_data)
+```
+
+### Make a map using GitHub gists
+
+If you have a Github Account, you can get an interactive map on Github in one line of code. The map will open in your default browser. 
+
+```{r gistmap, eval=FALSE}
+mapgist(ebird_data, color=c("#976AAE","#6B944D","#BD5945"))
+```
+
+![](figure/gistmap.png)
