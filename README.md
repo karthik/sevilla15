@@ -15,7 +15,7 @@ You'll be able to copy-paste all of the code provided here directly into RStudio
 |Topic|Time|
 |---------------|-------|
 |**Setup and making sure logins work**| 15 minutes |
-|**Brief introduction to rOpenSci** [slides](/00-introduction/intro_slides/index.html) | 10 minutes |
+|**Brief introduction to rOpenSci** [slides](http://karthik.github.io/sevilla15/00-introduction/intro_slides/) | 10 minutes |
 |**rOpenSci demos 1** *Taxonomic names*  | 20-25 minutes |
 |**rOpenSci demos 2** *Biodiversity records* | 20-25 minutes |
 |**rOpenSci demos 3** *Earth science data* | 20-25 minutes |
