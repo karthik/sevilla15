@@ -6,6 +6,7 @@ February 16th, 2015
 You'll be able to copy-paste all of the code provided here directly into RStudio.
 
 * Login at [**rstudio.ropensci.org:8787**](http://rstudio.ropensci.org:8787)
+* Notes and discussion at: [https://ropensci.etherpad.mozilla.org/sevilla15](https://ropensci.etherpad.mozilla.org/sevilla15)  
 
 ---
 
