@@ -3,6 +3,7 @@
 By default gets generic names, and returns 10 items
 
 ```{r}
+library(taxize)
 names_list()
 ```
 
@@ -17,3 +18,16 @@ Get 10 family names
 ```{r}
 names_list('family', 10)
 ```
+
+```{r}
+names_list('family', 10)
+```
+
+```{r}
+names_list('order')
+```
+
+```{r}
+names_list('genus', '500')
+```
+
